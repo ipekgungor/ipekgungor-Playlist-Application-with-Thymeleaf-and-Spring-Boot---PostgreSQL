@@ -1,0 +1,108 @@
+/* General Styles */
+#home {
+    padding: 0;
+}
+
+#home {
+    background-color: #ffffff;
+}
+
+#artists {
+    background-color: #e9e9e9;
+}
+
+#about {
+    background-color: #dcdcdc;
+}
+
+#carouselExampleIndicators {
+    margin: 0 auto;
+	margin-top: 30px;
+    max-width: calc(120% - 150px);
+    max-height: 600px;
+}
+
+.carousel-inner img {
+    max-height: 500px;
+    object-fit: cover;
+}
+
+body, h1, a {
+	text-align: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.table {
+	margin-top: 20px;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #333;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar .nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar .nav-links li {
+    margin: 0 15px;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+	font-family: Arial, sans-serif; /* Navbar yazı tipi */
+    padding: 8px 16px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+/*Song Page*/
+.song-btn {
+    background-color: #dc3545;
+    color: white;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    flex-grow: 1; /* Allows buttons to stretch and take up equal space */
+	border-radius: .25rem;
+}
+
+.song-btn:hover {
+    color: white;
+    border: 1px solid white;
+}
+a {
+	color: white;
+	text-decoration: underline;
+}
+
+.action-song-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+}
+
+.message {
+	margin-top: 20px;
+}
+
+.section {
+    padding: 20px;
+    min-height: 100vh;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Song List</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+</head>
+<body>
+    <div th:replace="fragments/navbar :: navbar"></div>
+    <div class="container mt-4">
+        <h1>Song List</h1>
+		<div th:if="${message}" class="alert alert-info message" th:text="${message}"></div>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Artist Name</th>
+                    <th scope="col">Song Name</th>
+                    <th scope="col">Song Release Date</th>
+                    <th scope="col">
+						Listen on Spotify
+						<img src="/images/spotify.jpg" alt="Spotify" style="width: 40px; height: 24px; vertical-align: center;">
+					</th>
+                    <th scope="col">
+						Listen on YouTube Music
+						<img src="/images/youtubemusic.png" alt="YouTube Music" style="width: 40px; height: 24px; vertical-align: center;">
+					</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="song, iterStat : ${songs}">
+                    <th scope="row" th:text="${iterStat.count}"></th>
+                    <td th:text="${song.artist.artistName} + ' ' + ${song.artist.artistSurname}"></td>
+                    <td th:text="${song.songName}"></td>
+                    <td th:text="${#dates.format(song.songReleaseDate, 'yyyy-MM-dd')}"></td>
+                    <td>
+                        <a th:href="${song.spotifyUrl}" target="_blank">listen</a>
+                    </td>
+                    <td>
+                        <a th:href="${song.ytmusicUrl}" target="_blank">listen</a>
+                    </td>
+                    <td>
+                        <div class="action-song-buttons">
+                            <form th:action="@{/add-playlist/{id}(id=${song.songId})}" method="post" style="flex-grow: 1;">
+                                <button type="submit" class="song-btn">Add Playlist</button>
+                            </form>
+                            <button type="button" class="song-btn" th:onclick="'window.location.href=\'/artist/' + ${song.artist.artistId} + '\''">
+                                View Artist
+                            </button>
+                            <button type="button" class="song-btn" th:onclick="'window.location.href=\'/album/' + ${song.album.albumId} + '\''">
+                                View Album
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Album Detail</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/detail.css}">
+</head>
+<body>
+    <div th:replace="fragments/navbar :: navbar"></div>
+    <div class="container">
+        <div class="detail-header">
+            <img th:src="${album.albumImg}" alt="Album Image" class="img-fluid" style="max-width: 300px; height: auto;">
+            <h1 th:text="${album.albumName}"></h1>
+            <p><strong>Release Date:</strong> <span th:text="${#dates.format(album.releaseDate, 'yyyy-MM-dd')}"></span></p>
+            <p><strong>Artist:</strong> <span th:text="${album.artist.artistName} + ' ' + ${album.artist.artistSurname}"></span></p>
+        </div>
+        <h2>Songs</h2>
+        <ul class="songs-list">
+            <li th:each="song : ${songs}" th:text="${song.songName}"></li>
+        </ul>
+        <a href="/songs" class="btn btn-back">Back to Song List</a>
+    </div>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

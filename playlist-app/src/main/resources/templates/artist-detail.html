@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Artist Detail</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/detail.css}">
+</head>
+<body>
+    <div th:replace="fragments/navbar :: navbar"></div>
+    <div class="container">
+        <div class="detail-header">
+            <img th:src="${artist.artistImg}" alt="Artist Image" class="img-fluid" style="max-width: 300px; height: auto;">            
+            <h1 th:text="${artist.artistName} + ' ' + ${artist.artistSurname}"></h1>
+            <p><strong>Style:</strong> <span th:text="${artist.artistStyle}"></span></p>
+            <p><strong>Birth Year:</strong> <span th:text="${artist.artistBirthYear}"></span></p>
+        </div>
+        <h2>Songs</h2>
+        <ul class="songs-list">
+			<!-- Checks the songs that belong to each song object in the songs -->
+            <li th:each="song : ${songs}" th:if="${song.artist.artistId == artist.artistId}" th:text="${song.songName}"></li>
+        </ul>
+        <a href="/songs" class="btn btn-back">Back to Song List</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
