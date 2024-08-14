@@ -22,4 +22,4 @@ This project is a music application developed using Thymeleaf and Spring Boot, i
 
 ## Notes
 - **Be careful about the java and eclipse versions.** My Eclipse version: 2024-06 (4.32.0) / My Java version: java 22.0.
-- **You can find sql commands in src/main/resources/sql**
+- **You can find sql commands in src/main/resources/sql** 
