@@ -12,8 +12,31 @@ This project is a music application developed using Thymeleaf and Spring Boot, i
 ## Requirements
 
 - **Java:** 17 or later
+- **Spring Boot:**
 - **Maven:** 
 - **PostgreSQL:** Database management system
+
+## Installation Instructions
+
+To run this project locally, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ipekgungor/ipekgungor-Playlist-Application-with-Thymeleaf-and-Spring-Boot---PostgreSQL.git
+   cd ipekgungor-Playlist-Application-with-Thymeleaf-and-Spring-Boot---PostgreSQL.git
+   
+2. Set up your PostgreSQL database:
+   ```bash
+   CREATE USER <postgres_user> WITH PASSWORD '<password>';
+   CREATE DATABASE <database_name>;
+   GRANT ALL PRIVILEGES ON DATABASE <database_name> TO <postgres_user>;
+3. Run sql scripts (in src/main/resources/sql)
+4. Run the application
+   ```bash
+   mvn clean install
+   mvn spring-boot:run
+5. Once the application is running, navigate to http://localhost:8080 to use the app.
+
 
 ## Contact
 - **Developer:** İpek Güngör
