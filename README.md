@@ -12,7 +12,6 @@ This project is a music application developed using Thymeleaf and Spring Boot, i
 ## Requirements
 
 - **Java:** 17 or later
-- **Spring Boot:**
 - **Maven:** 
 - **PostgreSQL:** Database management system
 
