@@ -31,7 +31,7 @@ To run this project locally, follow these steps:
    CREATE DATABASE <database_name>;
    GRANT ALL PRIVILEGES ON DATABASE <database_name> TO <postgres_user>;
 3. Run sql scripts (in src/main/resources/sql)
-4. Run the application
+4. Run the application:
    ```bash
    mvn clean install
    mvn spring-boot:run
