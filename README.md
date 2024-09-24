@@ -22,7 +22,7 @@ To run this project locally, follow these steps:
 1. Clone the repository:
    ```bash
    git clone https://github.com/ipekgungor/ipekgungor-Playlist-Application-with-Thymeleaf-and-Spring-Boot---PostgreSQL.git
-   cd ipekgungor-Playlist-Application-with-Thymeleaf-and-Spring-Boot---PostgreSQL.git
+   cd ipekgungor-Playlist-Application-with-Thymeleaf-and-Spring-Boot---PostgreSQL
    
 2. Set up your PostgreSQL database:
    ```bash
